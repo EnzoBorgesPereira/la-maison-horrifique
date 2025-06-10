@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export const ContactInfo = () => {
     return (
-        <section className="w-full bg-gray-100 flex flex-col md:flex-row items-center justify-center py-6 px-2 shadow-md my-8 mx-4">
+        <section className="w-full bg-gray-100 flex flex-col md:flex-row items-center justify-center py-6 shadow-md my-8">
             <div className="flex flex-col md:flex-row items-center justify-center w-full max-w-7xl">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4 md:mb-0 md:mr-8 whitespace-nowrap">
                     Nous contacter
