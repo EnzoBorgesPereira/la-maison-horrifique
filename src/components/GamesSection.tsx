@@ -1,6 +1,6 @@
 import { GameCard } from './GameCard';
 import { games } from '../data/GameData';
-import { Game } from '../types/Game';
+import type { Game } from '../types/Game';
 
 export const GamesSection = () => {
     return (
