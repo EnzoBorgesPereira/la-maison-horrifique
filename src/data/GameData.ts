@@ -9,7 +9,7 @@ export const games: Game[] = [
         difficulty: 'Moyen',
         minPlayers: 2,
         maxPlayers: 6,
-        imageUrl: '/assets/images/maison-hantee.jpg'
+        imageUrl: 'src/assets/images/manoir.jpg'
     },
     {
         id: '2',
@@ -19,6 +19,6 @@ export const games: Game[] = [
         difficulty: 'Difficile',
         minPlayers: 3,
         maxPlayers: 8,
-        imageUrl: '/assets/images/asile.jpg'
+        imageUrl: 'src/assets/images/asile.jpeg'
     }
 ];
