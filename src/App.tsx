@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 function App() {
   return (
       <Router>
-        <div className="app">
+        <div className="flex min-h-screen flex-col">
           <Navbar />
           <Routes>
             <Route path="/" element={<HomePage />} />

@@ -1,7 +1,7 @@
 export const HeroSection = () => {
     return (
-        <section className="hero relative h-96 flex items-center justify-center bg-gray-900 bg-opacity-50 bg-blend-overlay bg-cover bg-center">
-            <div className="hero-content text-center px-4 max-w-4xl mx-auto">
+        <section className="relative flex h-96 items-center justify-center bg-cover bg-center bg-gray-900/50 bg-blend-overlay">
+            <div className="text-center px-4 max-w-4xl mx-auto">
                 <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
                     Bienvenue à La Maison Horrifique
                 </h1>

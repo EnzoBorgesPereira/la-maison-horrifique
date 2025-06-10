@@ -5,7 +5,7 @@ interface GameCardProps {
 
 export const GameCard = ({ game }: GameCardProps) => {
     return (
-        <div className="game-card bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 max-w-sm mx-auto my-4">
+        <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 max-w-sm mx-auto my-4">
             <img
                 src={game.imageUrl}
                 alt={game.title}
@@ -14,7 +14,7 @@ export const GameCard = ({ game }: GameCardProps) => {
             <div className="p-6">
                 <h3 className="text-xl font-bold text-gray-800 mb-2">{game.title}</h3>
                 <p className="text-gray-600 mb-4">{game.description}</p>
-                <div className="game-details grid grid-cols-2 gap-2 text-sm text-gray-700">
+                <div className="grid grid-cols-2 gap-2 text-sm text-gray-700">
                     <span className="flex items-center">
                         <i className="fas fa-clock text-red-600 mr-2"></i>
                         Durée: {game.duration} min

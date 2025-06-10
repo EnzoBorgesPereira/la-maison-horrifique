@@ -1,6 +1,6 @@
 export const ContactInfo = () => {
     return (
-        <section className="contact-info bg-gray-100 p-8 rounded-lg shadow-md max-w-md mx-auto my-8">
+        <section className="bg-gray-100 p-8 rounded-lg shadow-md max-w-md mx-auto my-8">
             <h2 className="text-2xl font-bold text-gray-800 mb-4">Nous contacter</h2>
             <address className="not-italic">
                 <p className="flex items-center text-gray-700 mb-3">
