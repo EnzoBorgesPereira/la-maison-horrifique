@@ -4,9 +4,9 @@ export const Footer = () => {
         <footer className="bg-gray-900 text-gray-200 mt-auto">
             <div className="container mx-auto flex flex-col items-center justify-between px-4 py-6 space-y-4 sm:flex-row sm:space-y-0">
                 <div className="flex space-x-4">
-                    <a href="#" className="hover:text-red-500"><i className="fab fa-facebook"></i></a>
-                    <a href="#" className="hover:text-red-500"><i className="fab fa-instagram"></i></a>
-                    <a href="#" className="hover:text-red-500"><i className="fab fa-twitter"></i></a>
+                    <a href="#" className="hover:text-red-500"><i className="fa-brands fa-facebook"></i></a>
+                    <a href="#" className="hover:text-red-500"><i className="fa-brands fa-instagram"></i></a>
+                    <a href="#" className="hover:text-red-500"><i className="fa-brands fa-twitter"></i></a>
                 </div>
                 <div className="flex space-x-4">
                     <Link to="/games" className="hover:text-red-500">Sessions de jeu</Link>
