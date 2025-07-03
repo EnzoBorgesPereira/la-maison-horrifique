@@ -7,6 +7,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { SessionsPage } from './pages/SessionsPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { LegalPage } from './pages/LegalPage.tsx';
+import { HomePage } from './pages/HomePage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -14,9 +15,19 @@ const router = createBrowserRouter([
     path: '/',
     children: [
       {
+        element: <HomePage />,
+        index: true
+      },
+      {
+        path: 'booking',
+      },
+      {
         element: <SessionsPage />,
         path: 'games',
         children: []
+      },
+      {
+        path: 'session/:id',
       },
       {
         element: <ContactPage />,
