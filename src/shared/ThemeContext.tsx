@@ -21,7 +21,7 @@ export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   });
 
   useEffect(() => {
-    document.body.className = theme;
+    document.documentElement.className = theme;
     localStorage.setItem("theme", theme);
   }, [theme]);
 

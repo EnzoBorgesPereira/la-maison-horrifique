@@ -5,7 +5,7 @@ import { ContactInfo } from '../components/ContactInfo'
 
 export const HomePage = () => {
     return (
-        <main className="flex-grow">
+        <main className="flex-grow bg-white dark:bg-gray-900 transition-colors duration-300">
             <HeroSection />
             <AboutSection />
             <GamesSection />
