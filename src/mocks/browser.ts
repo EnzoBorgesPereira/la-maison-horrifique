@@ -1,7 +1,7 @@
-import { getMockSessions } from "./session";
 import { setupWorker } from "msw/browser";
+import { getMockgames } from "./game";
 
 const handlers = [
-    getMockSessions(),
+    getMockgames(),
 ]
 export const worker = setupWorker(...handlers);

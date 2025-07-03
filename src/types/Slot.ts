@@ -1,6 +1,6 @@
 export interface Slot {
   id: string;
-  sessionId: string;
+  gameId: string;
   startTime: Date;
   endTime: Date;
   isBooked: boolean;

@@ -4,7 +4,7 @@ import './index.css'
 import App from './App.tsx'
 import { ThemeProvider } from "./shared/ThemeContext.tsx";
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { SessionsPage } from './pages/SessionsPage.tsx';
+import { GamesPage } from './pages/GamesPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { LegalPage } from './pages/LegalPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
@@ -22,7 +22,7 @@ const router = createBrowserRouter([
         path: 'booking',
       },
       {
-        element: <SessionsPage />,
+        element: <GamesPage />,
         path: 'games',
         children: []
       },
