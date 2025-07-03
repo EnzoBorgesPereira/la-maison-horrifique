@@ -1,4 +1,6 @@
+import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom'
+
 export const Navbar = () => {
     return (
         <nav className="bg-gray-900 text-white shadow">
@@ -8,13 +10,13 @@ export const Navbar = () => {
                 </Link>
                 <ul className="flex space-x-4">
                     <li>
-                        <Link to="/booking" className="hover:text-red-500">Réservation</Link>
+                        <NavLink to="/booking" className="hover:text-red-500">Réservation</NavLink>
                     </li>
                     <li>
-                        <Link to="/games" className="hover:text-red-500">Sessions de jeu</Link>
+                        <NavLink to="/games" className="hover:text-red-500">Sessions de jeu</NavLink>
                     </li>
                     <li>
-                        <Link to="/contact" className="hover:text-red-500">Contact</Link>
+                        <NavLink to="/contact" className="hover:text-red-500">Contact</NavLink>
                     </li>
                 </ul>
             </div>

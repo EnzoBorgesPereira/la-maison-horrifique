@@ -1,9 +1,9 @@
 import type { Game } from "../types/Game";
-interface GameCardProps {
+interface Props {
     game: Game
 }
 
-export const GameCard = ({ game }: GameCardProps) => {
+export const GameCard = ({ game }: Props) => {
     return (
         <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 max-w-sm mx-auto my-4">
             <img
