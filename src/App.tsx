@@ -8,7 +8,7 @@ import {LegalPage} from "./pages/LegalPage.tsx";
 function App() {
   return (
       <Router>
-        <div className="flex min-h-screen flex-col w-full">
+        <div className="flex min-h-screen flex-col w-full dark:bg-gray-900 transition-colors duration-300">
           <Navbar />
           <Routes>
               <Route path="/" element={<HomePage />} />
