@@ -1,7 +1,7 @@
 import { setupWorker } from "msw/browser";
-import { getMockgames } from "./game";
+import { getMockGames } from "./game";
 
 const handlers = [
-    getMockgames(),
+    getMockGames(),
 ]
 export const worker = setupWorker(...handlers);
