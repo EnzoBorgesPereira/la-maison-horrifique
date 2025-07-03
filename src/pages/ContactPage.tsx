@@ -18,7 +18,6 @@ export const ContactPage = () => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        // Ici vous pourriez ajouter la logique pour envoyer le formulaire
         console.log('Formulaire soumis:', formData);
         alert('Merci pour votre message ! Nous vous répondrons dès que possible.');
         setFormData({
