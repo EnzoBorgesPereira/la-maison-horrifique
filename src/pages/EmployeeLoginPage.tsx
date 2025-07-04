@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useEmployeeAuth } from "../context/EmployeeAuthContext";
+import {Link} from "react-router-dom";
 
 export const EmployeeLogin = () => {
     const { login, isAuthenticated } = useEmployeeAuth();
@@ -24,6 +25,13 @@ export const EmployeeLogin = () => {
                     <li>Ajout de créneaux pour une session</li>
                     <li>Annulation d'un créneau</li>
                 </ul>
+
+                <Link
+                    to="/games/manage-sessions"
+                    className="inline-block px-4 py-2 rounded bg-green-600 hover:bg-green-700 text-white transition-colors"
+                >
+                    Gérer les sessions
+                </Link>
             </div>
         ) : (
             <div className="w-full max-w-lg mx-auto mt-12 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">

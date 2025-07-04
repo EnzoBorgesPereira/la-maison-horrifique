@@ -5,6 +5,8 @@ import { AdminGamesList } from '../components/AdminGamesList.tsx';
 import { LoadingIndicator } from '../components/LoadingIndicator';
 import { ErrorDisplay } from '../components/ErrorDisplay';
 import { GameForm } from "../components/GameForm.tsx";
+import { useEmployeeAuth } from "../context/EmployeeAuthContext";
+import { useNavigate } from "react-router-dom";
 
 const initialGameState: Omit<Game, 'id'> = {
     title: "",
@@ -19,6 +21,15 @@ const initialGameState: Omit<Game, 'id'> = {
 };
 
 export const ManageSessionsPage = () => {
+    const { isAuthenticated } = useEmployeeAuth();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (!isAuthenticated) {
+            navigate("/employee");
+        }
+    }, [isAuthenticated, navigate]);
+
     const [games, setGames] = useState<Game[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
