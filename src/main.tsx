@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { ThemeProvider } from "./shared/ThemeContext.tsx";
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
 import { GamesPage } from './pages/GamesPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { LegalPage } from './pages/LegalPage.tsx';
@@ -25,9 +25,13 @@ const router = createBrowserRouter([
         path: 'booking',
       },
       {
-        element: <GamesPage />,
+        element: <Outlet />,
         path: 'games',
         children: [
+          {
+            path: '',
+            element: <GamesPage />,
+          },
           {
             path: 'manage-sessions',
             element: <ManageSessionsPage />,

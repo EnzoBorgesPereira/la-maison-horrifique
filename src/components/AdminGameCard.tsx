@@ -6,11 +6,12 @@ interface AdminGameCardProps {
     onEdit: (game: Game) => void;
     onDelete: (id: string) => void;
     isLoading: boolean;
+    isEditing: boolean;
 }
 
-export const AdminGameCard = ({ game, onEdit, onDelete, isLoading }: AdminGameCardProps) => {
+export const AdminGameCard = ({ game, onEdit, onDelete, isLoading, isEditing }: AdminGameCardProps) => {
     return (
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg dark:hover:shadow-gray-700 transition-shadow duration-300  mx-auto my-4 relative">
+        <div className={`${isEditing ? 'ring-4 ring-blue-500 dark:ring-blue-400' : ''} bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg dark:hover:shadow-gray-700 transition-shadow duration-300  mx-auto my-4 relative`}>
             <div className="absolute top-2 right-2 flex gap-2">
                 <button
                     onClick={() => onEdit(game)}

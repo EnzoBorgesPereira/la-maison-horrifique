@@ -43,7 +43,6 @@ export const ManageSessionsPage = () => {
             const gameWithSlots = { ...game, slots };
 
             if (editingId) {
-                // Simulate API update
                 await new Promise(resolve => setTimeout(resolve, 500));
                 setGames(games.map(g =>
                     g.id === editingId ? {
@@ -56,7 +55,6 @@ export const ManageSessionsPage = () => {
                     } : g
                 ));
             } else {
-                // Simulate API create
                 await new Promise(resolve => setTimeout(resolve, 500));
                 const newId = Date.now().toString();
                 setGames([...games, {
@@ -128,7 +126,7 @@ export const ManageSessionsPage = () => {
     }
 
     return (
-        <div className="max-w-4xl mx-auto my-12 px-4">
+        <div className="max-w-6xl mx-auto my-12 px-4">
             <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8">
                 Gestion des sessions d'Escape Game
             </h1>
@@ -153,6 +151,7 @@ export const ManageSessionsPage = () => {
                     onEdit={handleEdit}
                     onDelete={handleDelete}
                     isLoading={loading}
+                    editingId={editingId}
                 />
             </div>
         </div>

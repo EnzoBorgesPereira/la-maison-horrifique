@@ -6,11 +6,12 @@ interface AdminGamesListProps {
     onEdit: (game: Game) => void;
     onDelete: (id: string) => void;
     isLoading: boolean;
+    editingId: string | null;
 }
 
-export const AdminGamesList = ({ games, onEdit, onDelete, isLoading }: AdminGamesListProps) => {
+export const AdminGamesList = ({ games, onEdit, onDelete, isLoading, editingId }: AdminGamesListProps) => {
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6">
             {games.length === 0 ? (
                 <p className="text-gray-700 dark:text-gray-300 col-span-full text-center py-8">
                     Aucune session disponible
@@ -23,6 +24,7 @@ export const AdminGamesList = ({ games, onEdit, onDelete, isLoading }: AdminGame
                         onEdit={onEdit}
                         onDelete={onDelete}
                         isLoading={isLoading}
+                        isEditing={editingId === game.id}
                     />
                 ))
             )}
