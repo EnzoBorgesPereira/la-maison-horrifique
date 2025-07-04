@@ -32,6 +32,10 @@ export const GameCard = ({ game }: GameCardProps) => {
                         <i className="fas fa-users text-red-600 dark:text-red-400 mr-2"></i>
                         Joueurs: {game.minPlayers}-{game.maxPlayers}
                     </span>
+                    <span className="flex items-center">
+                        <i className="fas fa-dollar-sign text-red-600 dark:text-red-400 mr-2"></i>
+                        Prix: {game.price} €
+                    </span>
                 </div>
             </div>
         </div>
