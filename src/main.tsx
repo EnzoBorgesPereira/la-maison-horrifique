@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.tsx'
 import { ThemeProvider } from "./shared/ThemeContext.tsx";
-import {createBrowserRouter, Outlet, RouterProvider} from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import { GamesPage } from './pages/GamesPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { LegalPage } from './pages/LegalPage.tsx';
@@ -11,6 +11,7 @@ import { HomePage } from './pages/HomePage.tsx';
 import { EmployeeAuthProvider } from "./context/EmployeeAuthContext.tsx";
 import { EmployeeLogin } from "./pages/EmployeeLoginPage.tsx";
 import { ManageSessionsPage } from "./pages/ManageSessionsPage.tsx";
+import { BookingPage } from './pages/BookingPage.tsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'booking',
+        element: <BookingPage />
       },
       {
         element: <Outlet />,
