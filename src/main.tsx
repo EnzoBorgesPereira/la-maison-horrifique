@@ -8,6 +8,7 @@ import { GamesPage } from './pages/GamesPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { LegalPage } from './pages/LegalPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
+import {ManageSessionsPage} from "./pages/ManageSessionsPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,10 @@ const router = createBrowserRouter([
       {
         element: <LegalPage />,
         path: 'legal'
+      },
+      {
+        element: <ManageSessionsPage />,
+        path: 'ManageSessions'
       }
 
     ]
