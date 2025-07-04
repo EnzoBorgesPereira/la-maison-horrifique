@@ -8,6 +8,8 @@ import { GamesPage } from './pages/GamesPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { LegalPage } from './pages/LegalPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
+import {EmployeeAuthProvider} from "./context/EmployeeAuthContext.tsx";
+import {EmployeeLogin} from "./pages/EmployeeLoginPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -36,8 +38,11 @@ const router = createBrowserRouter([
       {
         element: <LegalPage />,
         path: 'legal'
+      },
+      {
+        path: 'employee',
+        element: <EmployeeLogin/>
       }
-
     ]
   }
 ]);
@@ -54,7 +59,9 @@ enableMocking().then(() => {
   createRoot(document.getElementById("root") as HTMLElement).render(
     <StrictMode>
       <ThemeProvider>
-        <RouterProvider router={router} />
+        <EmployeeAuthProvider>
+          <RouterProvider router={router} />
+        </EmployeeAuthProvider>
       </ThemeProvider>
     </StrictMode>,
   )
