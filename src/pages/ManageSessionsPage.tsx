@@ -151,6 +151,7 @@ export const ManageSessionsPage = () => {
                     onEdit={handleEdit}
                     onDelete={handleDelete}
                     isLoading={loading}
+                    editingId={editingId}
                 />
             </div>
         </div>
