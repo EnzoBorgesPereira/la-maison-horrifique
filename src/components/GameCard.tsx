@@ -1,12 +1,22 @@
 import type { Game } from "../types/Game";
+import { useNavigate } from "react-router-dom";
 
 interface GameCardProps {
     game: Game
 }
 
 export const GameCard = ({ game }: GameCardProps) => {
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate("/booking", { state: game });
+    };
+
     return (
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg dark:hover:shadow-gray-700 transition-shadow duration-300 max-w-sm mx-auto my-4">
+        <div
+            onClick={handleClick}
+            className="cursor-pointer bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg dark:hover:shadow-gray-700 transition-shadow duration-300 max-w-sm mx-auto my-4"
+        >
             <img
                 src={game.imageUrl}
                 alt={game.title}
@@ -33,7 +43,7 @@ export const GameCard = ({ game }: GameCardProps) => {
                         Joueurs: {game.minPlayers}-{game.maxPlayers}
                     </span>
                     <span className="flex items-center">
-                        <i className="fas fa-dollar-sign text-red-600 dark:text-red-400 mr-2"></i>
+                        <i className="fas fa-euro-sign text-red-600 dark:text-red-400 mr-2"></i>
                         Prix: {game.price} €
                     </span>
                 </div>
