@@ -8,7 +8,9 @@ import { GamesPage } from './pages/GamesPage.tsx';
 import { ContactPage } from './pages/ContactPage.tsx';
 import { LegalPage } from './pages/LegalPage.tsx';
 import { HomePage } from './pages/HomePage.tsx';
-import {ManageSessionsPage} from "./pages/ManageSessionsPage.tsx";
+import { EmployeeAuthProvider } from "./context/EmployeeAuthContext.tsx";
+import { EmployeeLogin } from "./pages/EmployeeLoginPage.tsx";
+import { ManageSessionsPage } from "./pages/ManageSessionsPage.tsx";
 
 const router = createBrowserRouter([
   {
@@ -25,24 +27,28 @@ const router = createBrowserRouter([
       {
         element: <GamesPage />,
         path: 'games',
-        children: []
+        children: [
+          {
+            path: 'manage-sessions',
+            element: <ManageSessionsPage />,
+          },
+        ]
       },
       {
         path: 'session/:id',
       },
       {
-        element: <ContactPage />,
-        path: 'contact'
+        path: 'contact',
+        element: <ContactPage />
       },
       {
-        element: <LegalPage />,
-        path: 'legal'
+        path: 'legal',
+        element: <LegalPage />
       },
       {
-        element: <ManageSessionsPage />,
-        path: 'ManageSessions'
+        path: 'employee',
+        element: <EmployeeLogin />
       }
-
     ]
   }
 ]);
@@ -59,7 +65,9 @@ enableMocking().then(() => {
   createRoot(document.getElementById("root") as HTMLElement).render(
     <StrictMode>
       <ThemeProvider>
-        <RouterProvider router={router} />
+        <EmployeeAuthProvider>
+          <RouterProvider router={router} />
+        </EmployeeAuthProvider>
       </ThemeProvider>
     </StrictMode>,
   )

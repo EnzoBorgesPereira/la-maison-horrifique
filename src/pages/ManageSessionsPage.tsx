@@ -4,13 +4,13 @@ import type { Slot } from "../types/Slot";
 import { AdminGamesList } from '../components/AdminGamesList.tsx';
 import { LoadingIndicator } from '../components/LoadingIndicator';
 import { ErrorDisplay } from '../components/ErrorDisplay';
-import {GameForm} from "../components/GameForm.tsx";
+import { GameForm } from "../components/GameForm.tsx";
 
 const initialGameState: Omit<Game, 'id'> = {
     title: "",
     description: "",
     duration: 60,
-    difficulty: "Facile",
+    difficulty: Difficulty[0],
     price: 0,
     minPlayers: 2,
     maxPlayers: 6,
@@ -32,7 +32,7 @@ export const ManageSessionsPage = () => {
             .then((data) => setGames(data))
             .catch((err) => {
                 console.error(err);
-                setError("Erreur lors du chargement des jeux");
+                setError("Erreur lors du chargement des sessions de jeu");
             })
             .finally(() => setLoading(false));
     }, []);
@@ -130,12 +130,12 @@ export const ManageSessionsPage = () => {
     return (
         <div className="max-w-4xl mx-auto my-12 px-4">
             <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-8">
-                Gestion des Jeux d'Escape Game
+                Gestion des sessions d'Escape Game
             </h1>
 
             <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md dark:shadow-gray-700 mb-8">
                 <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-6">
-                    {editingId ? 'Modifier un Jeu' : 'Ajouter un Nouveau Jeu'}
+                    {editingId ? 'Modifier une session' : 'Ajouter une nouvelle session'}
                 </h2>
 
                 <GameForm
@@ -147,7 +147,7 @@ export const ManageSessionsPage = () => {
             </div>
 
             <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-md dark:shadow-gray-700">
-                <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-6">Jeux existants</h2>
+                <h2 className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-6">Sessions existantes</h2>
                 <AdminGamesList
                     games={games}
                     onEdit={handleEdit}

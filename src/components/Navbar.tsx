@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import { useTheme } from "../shared/ThemeContext.tsx";
+import { useEmployeeAuth } from "../context/EmployeeAuthContext";
 
 export const Navbar = () => {
     const { theme, toggleTheme } = useTheme();
+    const { isAuthenticated , logout } = useEmployeeAuth();
 
     return (
         <nav className="bg-gray-900 dark:bg-gray-950 text-white shadow-lg">
@@ -59,6 +61,22 @@ export const Navbar = () => {
                             </>
                         )}
                     </button>
+
+                    {isAuthenticated  ? (
+                        <button
+                            onClick={logout}
+                            className="px-3 py-1 rounded bg-green-600 hover:bg-green-700 transition-colors"
+                        >
+                            Déconnexion employé
+                        </button>
+                    ) : (
+                        <Link
+                            to="/employee"
+                            className="px-3 py-1 rounded bg-green-600 hover:bg-green-700 transition-colors"
+                        >
+                            Espace employé
+                        </Link>
+                    )}
                 </div>
             </div>
         </nav>
