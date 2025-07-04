@@ -1,8 +1,13 @@
 import { GameCard } from './GameCard';
-import { games } from '../data/GameData';
 import type { Game } from '../types/Game';
+import { useGames } from '../hooks/useGames';
 
 export const GamesSection = () => {
+    const { games, status } = useGames(3);
+
+    if (status === "loading") return <span>Loading...</span>;
+    if (status === "error") return <span>Error loading games</span>;
+
     return (
         <section className="my-12">
             <h2 className="text-2xl font-bold text-center mb-6 text-gray-800 dark:text-gray-100">

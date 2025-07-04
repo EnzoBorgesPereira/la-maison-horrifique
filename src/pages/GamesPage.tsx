@@ -1,33 +1,10 @@
-import { useEffect, useState } from "react";
-import type { Game } from "../types/Game";
 import { GamesList } from "../components/GamesList";
 import { Outlet } from "react-router-dom";
+import { useGames } from "../hooks/useGames";
 
 export const GamesPage = () => {
 
-    const [games, setgames] = useState<Game[]>([]);
-    const [status, setStatus] = useState("idle");
-
-    useEffect(() => {
-        setStatus("loading");
-
-        fetch("http://fake-api/api/v1/games")
-            .then((res) =>
-                res
-                    .json()
-                    .then((games) => {
-                        setStatus("success");
-                        setgames([...games]);
-                    })
-                    .catch(() => {
-                        console.log("ERROR");
-                        setStatus("error");
-                    })
-            )
-            .catch(() => {
-                setStatus("error");
-            });
-    }, []);
+    const { games, status } = useGames(10);
 
     return (
         <section className="my-12">
