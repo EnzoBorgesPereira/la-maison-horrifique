@@ -41,7 +41,6 @@ export const BookingPage = () => {
                     game={selectedGame}
                     onBook={() => {
                         alert("Réservation du créneau");
-                        // TODO: appel API réservation
                     }}
                 />
             )}
