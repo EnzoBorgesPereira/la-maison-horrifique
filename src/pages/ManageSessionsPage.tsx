@@ -106,7 +106,6 @@ export const ManageSessionsPage = () => {
     const handleDelete = async (id: string) => {
         setLoading(true);
         try {
-            // Simulate API delete
             await new Promise(resolve => setTimeout(resolve, 500));
             setGames(games.filter(game => game.id !== id));
         } catch (err) {

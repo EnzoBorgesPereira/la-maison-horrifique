@@ -24,12 +24,10 @@ export const GameForm = ({ initialGame, onSubmit, isEditing, isLoading }: GameFo
     const validateForm = (): boolean => {
         const newErrors: Record<string, string> = {};
 
-        // Validation minPlayers <= maxPlayers
         if (game.minPlayers > game.maxPlayers) {
             newErrors.players = "Le nombre minimum de joueurs doit être inférieur ou égal au maximum";
         }
 
-        // Validation des créneaux
         if (slots.length === 0) {
             newErrors.slots = "Au moins un créneau doit être défini";
         }
